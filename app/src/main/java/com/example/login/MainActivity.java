@@ -22,8 +22,9 @@ public class MainActivity extends AppCompatActivity {
     String hasloval;
     String loginval;
 
-
     String haslofr = "abc";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,11 +57,11 @@ public class MainActivity extends AppCompatActivity {
                 hasloval = haslo.getText().toString();
 
 
-              if(hasloval.equals(haslofr)){
+              if(hasloval.equals(haslofr) && !loginval.isEmpty()){
                     Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                     intent.putExtra("loginx", loginval);
                     MainActivity.this.startActivity(intent);
-               }else if(hasloval != haslofr){
+               }else{
 
 
                    AlertDialog alert = builder.create();
