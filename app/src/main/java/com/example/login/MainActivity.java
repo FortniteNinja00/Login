@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     String haslofr = "abc";
 
+    String[] loginy = {"gamer", "admin", "plebs"};
 
 
     @Override
@@ -57,19 +58,19 @@ public class MainActivity extends AppCompatActivity {
                 hasloval = haslo.getText().toString();
 
 
-              if(hasloval.equals(haslofr) && !loginval.isEmpty()){
-                    Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-                    intent.putExtra("loginx", loginval);
-                    MainActivity.this.startActivity(intent);
-               }else{
+    if (hasloval.equals(haslofr) && !loginval.isEmpty() && (loginval.equals(loginy[0])|| loginval.equals(loginy[1])|| loginval.equals(loginy[2]))) {
+        Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+        intent.putExtra("loginx", loginval);
+        MainActivity.this.startActivity(intent);
+    } else {
 
 
-                   AlertDialog alert = builder.create();
-                    alert.show();
-                }
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
 
+}
 
-            }
         });
 
 
